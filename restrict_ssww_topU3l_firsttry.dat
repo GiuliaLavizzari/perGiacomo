@@ -93,7 +93,7 @@ Block SMEFT
    5 9.999999e-01 # cHDD
    6 0 # cHG
    7 9.999999e-01 # cHW
-   8 0 # cHB
+   8 9.999999e-01 # cHB
    9 9.999999e-01 # cHWB
    10 0 # cuHRe
    11 0 # ctHRe
