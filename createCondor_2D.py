@@ -50,7 +50,7 @@ def makeSubmit(op1, op2, opr):
     f.write('#-----------------------------------\n')
     f.write('cd /afs/cern.ch/user/g/glavizza/private/CMSSW_10_2_13/src/HiggsAnalysis/AnalyticAnomalousCoupling\n')
     f.write('cmsenv\n')
-    f.write('combine -M MultiDimFit model_test_2d.root --algo=grid --points 5000 -m 125 -t -1 --robustFit=1 --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND --redefineSignalPOIs {} --freezeParameters r,{} --setParameters r=1,{} --setParameterRanges {} --verbose -1 -n 2D_{}_{} \n'.format(signal_POI, other_POI, freeze_params, signal_ranges, op1, op2))
+    f.write('combine -M MultiDimFit workspace2D.root --algo=grid --points 5000 -m 125 -t -1 --robustFit=1 --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND --redefineSignalPOIs {} --freezeParameters r,{} --setParameters r=1,{} --setParameterRanges {} --verbose -1 -n 2D_{}_{} \n'.format(signal_POI, other_POI, freeze_params, signal_ranges, op1, op2))
     f.write("mv higgsCombine2D_{}_{}.MultiDimFit.mH125.root ./fits/\n".format(op1,op2))
     f.write("cd -\n")
     f.close()
@@ -59,7 +59,7 @@ def makeSubmit(op1, op2, opr):
     os.chmod(file_name, st.st_mode | stat.S_IEXEC)
 
     #########
-    file_name_1 = "../fits/submit.sub".format(op1,op2)
+    file_name_1 = "../fits/submit2D.sub".format(op1,op2)
     f1 = open(file_name_1, 'w')
 
     f1.write('Universe    = vanilla\n')
@@ -68,7 +68,7 @@ def makeSubmit(op1, op2, opr):
     f1.write('output      = $(dir)/submit.out\n')
     f1.write('error       = $(dir)/submit.err\n')
     f1.write('log         = $(dir)/submit.log\n')
-    f1.write('queue dir from list.txt\n')
+    f1.write('queue dir from list2D.txt\n')
     f1.write('+JobFlavour = "espresso"\n')
 
     f1.close()
@@ -76,7 +76,7 @@ def makeSubmit(op1, op2, opr):
     os.chmod(file_name_1, st.st_mode | stat.S_IEXEC)
 
 os.mkdir('../fits')
-list_name = "../fits/list.txt"
+list_name = "../fits/list2D.txt"
 f_ls = open(list_name, 'w')
 
 for i in range(len(opr)):
@@ -89,4 +89,3 @@ for i in range(len(opr)):
 #            print (list(opr.keys())[i],list(opr.keys())[j])
             makeSubmit(op1,op2,opr)
 
-f_ls.close()
