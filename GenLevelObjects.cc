@@ -33,7 +33,7 @@ public:
 protected:
   void bindTree_(multidraw::FunctionLibrary&) override;
 
-  std::array<float,11> outputValues;
+  std::array<float,27> outputValues;
 
   UIntValueReader* nGenPart{};
   IntArrayReader* GenPart_status{};
@@ -44,6 +44,9 @@ protected:
   FloatArrayReader* GenPart_eta{};
   FloatArrayReader* GenPart_phi{};
   FloatArrayReader* Lepton_pt{};
+  FloatArrayReader* Lepton_eta{};
+  FloatArrayReader* Lepton_phi{};
+  IntArrayReader* Lepton_pdgId{};
 };
 
 GenLevelObjects::GenLevelObjects() :
@@ -145,6 +148,48 @@ GenLevelObjects::setValues()
   outputValues[9] = GenPart_phi->At(idxNeu1);
   outputValues[10] = GenPart_pdgId->At(idxNeu1);
 
+  // let's make 4 vectors for Simone!
+  PtEtaPhiMVector lep1 = {0.,0.,0.,0.};
+  PtEtaPhiMVector lep2 = {0.,0.,0.,0.};
+  PtEtaPhiMVector neu1 = {0.,0.,0.,0.};
+  PtEtaPhiMVector neu2 = {0.,0.,0.,0.};
+  std::array<float,2> lepmass;
+  lepmass[0] = 0;
+  lepmass[1] = 0;
+  if (FLAG == 0) {
+    for (int i = 0; i <= 2; i++) {
+      if (abs(Lepton_pdgId->At(i)) == 11){
+        lepmass[i] = 0.000511; // in GeV
+      } else if (abs(Lepton_pdgId->At(i)) == 13) {
+        lepmass[i] = 0.105; // in GeV
+      }
+    }
+  }
+  lep1 = {Lepton_pt->At(0),Lepton_eta->At(0),Lepton_phi->At(0),lepmass[0]};
+  lep2 = {Lepton_pt->At(1),Lepton_eta->At(1),Lepton_phi->At(1),lepmass[1]};
+  neu1 = {GenPart_pt->At(idxNeu0),GenPart_eta->At(idxNeu0),GenPart_phi->At(idxNeu0),GenPart_mass->At(idxNeu0)};
+  neu2 = {GenPart_pt->At(idxNeu1),GenPart_eta->At(idxNeu1),GenPart_phi->At(idxNeu1),GenPart_mass->At(idxNeu1)};
+
+  outputValues[11] = lep1.E();
+  outputValues[12] = lep1.Px();
+  outputValues[13] = lep1.Py();
+  outputValues[14] = lep1.Pz();
+
+  outputValues[15] = lep2.E();
+  outputValues[16] = lep2.Px();
+  outputValues[17] = lep2.Py();
+  outputValues[18] = lep2.Pz();
+
+  outputValues[19] = neu1.E();
+  outputValues[20] = neu1.Px();
+  outputValues[21] = neu1.Py();
+  outputValues[22] = neu1.Pz();
+
+  outputValues[23] = neu2.E();
+  outputValues[24] = neu2.Px();
+  outputValues[25] = neu2.Py();
+  outputValues[26] = neu2.Pz();
+
 
   return;
 }
@@ -161,4 +206,8 @@ GenLevelObjects::bindTree_(multidraw::FunctionLibrary& _library)
   _library.bindBranch(GenPart_eta, "GenPart_eta");
   _library.bindBranch(GenPart_phi, "GenPart_phi");
   _library.bindBranch(Lepton_pt, "Lepton_pt");
+  _library.bindBranch(Lepton_eta, "Lepton_eta");
+  _library.bindBranch(Lepton_phi, "Lepton_phi");
+  _library.bindBranch(Lepton_pdgId, "Lepton_pdgId");
+
 }
