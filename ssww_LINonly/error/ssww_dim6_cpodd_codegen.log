@@ -1,0 +1,261 @@
+Starting job on  Wed Jun 5 17:06:07 CEST 2024
+Running on  Linux wp-12-12.lnl.infn.it 3.10.0-1160.102.1.el7.x86_64 #1 SMP Tue Oct 17 15:42:21 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+System release  CentOS Linux release 7.9.2009 (Core)
+name: ssww_dim6_cpodd
+carddir: cards/ssww_LINonly/
+queue: condor
+scram_arch: slc7_amd64_gcc700
+cmssw_version: CMSSW_10_6_19
+/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work
+patching file models/loop_qcd_qed_sm/restrict_lepton_masses_no_lepton_yukawas.dat
+patching file models/loop_sm/restrict_ckm_no_b_mass.dat
+patching file models/sm/restrict_ckm_lepton_masses.dat
+patching file models/sm/restrict_ckm_lepton_masses_no_b_mass.dat
+patching file models/sm/restrict_ckm_no_b_mass.dat
+patching file models/sm/restrict_lepton_masses_no_b_mass.dat
+patching file Template/NLO/SubProcesses/MCmasses_PYTHIA8.inc
+patching file madgraph/interface/reweight_interface.py
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file madgraph/interface/reweight_interface.py.rej
+patching file madgraph/interface/loop_interface.py
+patching file madgraph/various/systematics.py
+patching file Template/LO/Source/.make_opts
+Hunk #1 succeeded at 118 (offset 4 lines).
+patching file Template/NLO/Source/make_opts.inc
+patching file madgraph/iolibs/export_v4.py
+Hunk #1 succeeded at 521 (offset 23 lines).
+patching file madgraph/iolibs/template_files/pdf_opendata.f
+patching file madgraph/iolibs/template_files/pdf_wrap_lhapdf.f
+Hunk #2 succeeded at 38 with fuzz 1.
+patching file Template/LO/SubProcesses/refine.sh
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file Template/LO/Source/.make_opts
+Hunk #1 succeeded at 100 (offset 4 lines).
+patching file Template/LO/Source/PDF/pdf_lhapdf6.cc
+Hunk #1 succeeded at 16 with fuzz 2 (offset 4 lines).
+patching file Template/NLO/Source/PDF/pdf_lhapdf6.cc
+Hunk #1 succeeded at 16 with fuzz 2 (offset 4 lines).
+patching file Template/NLO/Source/make_opts.inc
+patching file madgraph/iolibs/template_files/pdf_wrap_lhapdf.f
+patching file Template/LO/SubProcesses/refine.sh
+Hunk #3 succeeded at 113 with fuzz 2.
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file madgraph/interface/reweight_interface.py
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file madgraph/interface/reweight_interface.py.rej
+patching file madgraph/interface/common_run_interface.py
+Hunk #1 succeeded at 1701 (offset 101 lines).
+patching file Template/LO/SubProcesses/refine.sh
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file madgraph/various/misc.py
+Hunk #1 succeeded at 450 (offset 48 lines).
+patching file madgraph/interface/amcatnlo_run_interface.py
+patching file madgraph/interface/madevent_interface.py
+Hunk #1 succeeded at 6598 (offset 17 lines).
+Hunk #2 succeeded at 6614 (offset 17 lines).
+patching file madgraph/interface/reweight_interface.py
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+2 out of 2 hunks ignored -- saving rejects to file madgraph/interface/reweight_interface.py.rej
+patching file MadSpin/decay.py
+patching file Template/NLO/SubProcesses/handling_lhe_events.f
+patching file madgraph/interface/amcatnlo_run_interface.py
+patching file madgraph/interface/reweight_interface.py
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+2 out of 2 hunks ignored -- saving rejects to file madgraph/interface/reweight_interface.py.rej
+patching file Template/NLO/SubProcesses/driver_mintFO.f
+patching file Template/NLO/SubProcesses/driver_mintMC.f
+patching file madgraph/core/helas_objects.py
+patching file MadSpin/interface_madspin.py
+patching file Template/LO/Source/PDF/PhotonFlux.f
+patching file madgraph/interface/madevent_interface.py
+patching file madgraph/interface/madgraph_interface.py
+patching file Template/LO/bin/internal/restore_data
+patching file madgraph/interface/madevent_interface.py
+patching file madgraph/interface/madevent_interface.py
+patching file Template/loop_material/StandAlone/SubProcesses/MadLoopCommons.inc
+patching file MadSpin/interface_madspin.py
+patching file madgraph/interface/common_run_interface.py
+patching file MadSpin/interface_madspin.py
+patching file madgraph/interface/amcatnlo_run_interface.py
+Hunk #5 succeeded at 4324 (offset 1 line).
+Hunk #6 succeeded at 5105 (offset 1 line).
+Hunk #7 succeeded at 5440 (offset 1 line).
+patching file madgraph/various/cluster.py
+local path is not an afs path, batch jobs will use worker node scratch space instead of afs
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.5                 2018-02-03         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+set lhapdf to lhapdf-config
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+No valid eps viewer found. Please set in ./input/mg5_configuration.txt
+No valid web browser found. Please set in ./input/mg5_configuration.txt
+import /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/mgconfigscript
+The import format was not given, so we guess it as command
+set auto_update 0
+save options auto_update
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set automatic_html_opening False
+This option will be the default in any output that you are going to create in this session.
+In order to keep this changes permanent please run 'save options'
+set output_dependencies internal
+save options output_dependencies
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set lhapdf /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/lhapdf/6.2.1-pafccj3/share/LHAPDF/../../bin/lhapdf-config
+set lhapdf to /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/lhapdf/6.2.1-pafccj3/share/LHAPDF/../../bin/lhapdf-config
+save options lhapdf
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set run_mode  1
+This option will be the default in any output that you are going to create in this session.
+In order to keep this changes permanent please run 'save options'
+set cluster_type cms_condor
+save options cluster_type
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set cluster_queue None
+save options cluster_queue
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set cluster_status_update 300 120
+save options cluster_status_update
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set cluster_nb_retry 10
+save options cluster_nb_retry
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set cluster_retry_wait 300
+save options cluster_retry_wait
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+set cluster_retry_wait 30
+save options cluster_retry_wait
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+save options
+save configuration file to /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/input/mg5_configuration.txt
+quit
+/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.5                 2018-02-03         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from MG5_aMC_v2_6_5/input/mg5_configuration.txt 
+None does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+set lhapdf to /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/lhapdf/6.2.1-pafccj3/share/LHAPDF/../../bin/lhapdf-config
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+No valid eps viewer found. Please set in ./input/mg5_configuration.txt
+No valid web browser found. Please set in ./input/mg5_configuration.txt
+import /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/ssww_dim6_cpodd_proc_card.dat
+The import format was not given, so we guess it as command
+set default_unset_couplings 99
+set group_subprocesses Auto
+Set group_subprocesses to Auto
+Note that you need to regenerate all processes
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set loop optimized output to True
+set low_mem_multicore_nlo_generation False
+set loop_color_flows False
+set loop color flows to False
+set gauge unitary
+Passing to gauge unitary.
+set complex_mass_scheme False
+Complex mass already desactivated.
+set max_npoint_for_channel 0
+import model SMEFTsim_topU3l_MwScheme_UFO-cWtil_cHWtil_cHWBtil_massless
+[1;60mINFO: download model from http://feynrules.irmp.ucl.ac.be/raw-attachment/wiki/SMEFT/SMEFTsim_topU3l_MwScheme_UFO.tar.gz to the following directory: /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/models [0m
+SMEFTsim_topU3l_MwScheme_UFO/
+SMEFTsim_topU3l_MwScheme_UFO/__init__.py
+SMEFTsim_topU3l_MwScheme_UFO/param_card_massless.dat
+SMEFTsim_topU3l_MwScheme_UFO/CT_couplings.py
+SMEFTsim_topU3l_MwScheme_UFO/particles.py
+SMEFTsim_topU3l_MwScheme_UFO/write_param_card.py
+SMEFTsim_topU3l_MwScheme_UFO/decays.py
+SMEFTsim_topU3l_MwScheme_UFO/parameters.py
+SMEFTsim_topU3l_MwScheme_UFO/restrict_massless.dat
+SMEFTsim_topU3l_MwScheme_UFO/object_library.py
+SMEFTsim_topU3l_MwScheme_UFO/coupling_orders.py
+SMEFTsim_topU3l_MwScheme_UFO/version.info
+SMEFTsim_topU3l_MwScheme_UFO/function_library.py
+SMEFTsim_topU3l_MwScheme_UFO/couplings.py
+SMEFTsim_topU3l_MwScheme_UFO/propagators.py
+SMEFTsim_topU3l_MwScheme_UFO/lorentz.py
+SMEFTsim_topU3l_MwScheme_UFO/vertices.py
+SMEFTsim_topU3l_MwScheme_UFO/restrict_SMlimit_massless.dat
+INFO: load particles 
+INFO: load vertices 
+INFO: Restrict model SMEFTsim_topU3l_MwScheme_UFO with file MG5_aMC_v2_6_5/models/SMEFTsim_topU3l_MwScheme_UFO/restrict_cWtil_cHWtil_cHWBtil_massless.dat . 
+INFO: Run "set stdout_level DEBUG" before import for more information. 
+[1;34mcommand not executed: define p = g u c d s b u~ c~ d~ s~ b~[0m
+[1;34mcommand not executed: define j = p[0m
+[1;34mcommand not executed: define l+ = e+ mu+ [0m
+[1;34mcommand not executed: define l- = e- mu- [0m
+[1;34mcommand not executed: define vl = ve vm[0m
+[1;34mcommand not executed: define vl~ = ve~ vm~[0m
+[1;34mcommand not executed: generate p p > l+ l+ vl vl j j SMHLOOP=0 QCD=0 NP=1[0m
+[1;34mcommand not executed: output ssww_dim6_cpodd[0m
+[1;34mcommand not executed: display multiparticles[0m
+quit
+job finished step CODEGEN, exiting now.

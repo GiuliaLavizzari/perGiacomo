@@ -1,0 +1,59 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.6.5                 2018-02-03         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set default_unset_couplings 99
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set low_mem_multicore_nlo_generation False
+set loop_color_flows False
+set gauge unitary
+set complex_mass_scheme False
+set max_npoint_for_channel 0
+import model SMEFTsim_topU3l_MwScheme_UFO-cWtil_cHWtil_cHWBtil_massless
+Traceback (most recent call last):
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/extended_cmd.py", line 1514, in onecmd
+    return self.onecmd_orig(line, **opt)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/extended_cmd.py", line 1463, in onecmd_orig
+    return func(arg, **opt)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/master_interface.py", line 274, in do_import
+    self.cmd.do_import(self, *args, **opts)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/madgraph_interface.py", line 5273, in do_import
+    self.import_command_file(args[1])
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/extended_cmd.py", line 1660, in import_command_file
+    self.exec_cmd(line, precmd=True)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/extended_cmd.py", line 1543, in exec_cmd
+    stop = Cmd.onecmd_orig(current_interface, line, **opt)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/extended_cmd.py", line 1463, in onecmd_orig
+    return func(arg, **opt)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/master_interface.py", line 274, in do_import
+    self.cmd.do_import(self, *args, **opts)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/madgraph/interface/madgraph_interface.py", line 5219, in do_import
+    complex_mass_scheme=self.options['complex_mass_scheme'])
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/models/import_ufo.py", line 293, in import_model
+    keep_external=keep_external, complex_mass_scheme=complex_mass_scheme)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/models/import_ufo.py", line 1847, in restrict_model
+    complex_mass_scheme=complex_mass_scheme)
+  File "/srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/models/model_reader.py", line 82, in set_parameters_and_couplings
+    raise MadGraph5Error, "No such file %s" % param_card
+MadGraph5Error: No such file /srv/ssww_dim6_cpodd/ssww_dim6_cpodd_gridpack/work/MG5_aMC_v2_6_5/models/SMEFTsim_topU3l_MwScheme_UFO/restrict_cWtil_cHWtil_cHWBtil_massless.dat
+Fail to write options with error No model currently active, please import a model!

@@ -1,0 +1,89 @@
+--- madgraph/interface/reweight_interface.py	2019-07-06 06:10:41.141086000 +0200
++++ madgraph/interface/reweight_interface.py	2019-07-06 06:12:26.895261000 +0200
+@@ -747,7 +747,7 @@
+         if 'initrwgt' in self.banner and self.output_type == 'default': 
+             if 'name=\'mg_reweighting\'' in self.banner['initrwgt']:
+                 blockpat = re.compile(r'''<weightgroup name=\'mg_reweighting\'\s*weight_name_strategy=\'includeIdInWeightName\'>(?P<text>.*?)</weightgroup>''', re.I+re.M+re.S)
+-                misc.sprint(blockpat, self.banner['initrwgt'])
++                # causing trouble, removed in 2.6.6 misc.sprint(blockpat, self.banner['initrwgt'])
+                 before, content, after = blockpat.split(self.banner['initrwgt'])
+                 header_rwgt_other = before + after
+                 pattern = re.compile('<weight id=\'(?:rwgt_(?P<id>\d+)|(?P<id2>[_\w]+))(?P<rwgttype>\s*|_\w+)\'>(?P<info>.*?)</weight>', re.S+re.I+re.M)
+--- madgraph/interface/reweight_interface.py 2017-08-17 00:25:24.000000000 +0200
++++ madgraph/interface/reweight_interface.py 2018-02-03 23:58:11.000000000 +0100
+@@ -1848,13 +1848,13 @@
+             logger.info("mode set to %s" % self.rwgt_mode)
+         if self.has_nlo and 'NLO' in self.rwgt_mode:
+             path = pjoin(obj['rwgt_dir'], 'rw_mevirt','Source')
+-            sys.path.insert(0, path)
+             try:
+-                mymod = __import__('rwgt2py', globals(), locals())
++                mymod = __import__('rw_mevirt.Source.rwgt2py')
+             except ImportError:
+                 misc.compile(['rwgt2py.so'], cwd=path)
+-                mymod = __import__('rwgt2py', globals(), locals())
++                mymod = __import__('rw_mevirt.Source.rwgt2py')
+             with misc.stdchannel_redirected(sys.stdout, os.devnull):
++                mymod = mymod.Source.rwgt2py
+                 mymod.initialise([self.banner.run_card['lpp1'], 
+                               self.banner.run_card['lpp2']],
+                              self.banner.run_card.get_lhapdf_id())
+--- madgraph/interface/reweight_interface.py  2019-07-28 20:33:50.606009030 +0200
++++ madgraph/interface/reweight_interface.py  2019-07-28 20:49:44.882060940 +0200
+@@ -24,6 +24,7 @@
+ import tempfile
+ import time
+ import subprocess
++import fileinput
+ from subprocess import Popen, PIPE, STDOUT
+ 
+ 
+@@ -1670,9 +1671,15 @@
+             else:
+                 nb_core = 1
+             os.environ['MENUM'] = '2'
++            os.chdir(pdir)
++            for line in fileinput.FileInput("../Source/make_opts", inplace=1):
++                line=line.replace("DEFAULT_F2PY_COMPILER=f2py","DEFAULT_F2PY_COMPILER=f2py2.7")
++                print line
++#            os.system("make allmatrix2py.so")
+             misc.compile(['allmatrix2py.so'], cwd=pdir, nb_core=nb_core)
+             if not (self.second_model or self.second_process or self.dedicated_path):
+                 os.environ['MENUM'] = '3'
++#                os.system("make allmatrix3py.so")
+                 misc.compile(['allmatrix3py.so'], cwd=pdir, nb_core=nb_core)
+ 
+     def load_module(self, metag=1):
+--- madgraph/interface/reweight_interface.py	2019-02-04 12:19:42.000000000 +0100
++++ madgraph/interface/reweight_interface.py	2020-01-31 23:34:54.199002000 +0100
+@@ -643,15 +643,15 @@
+             logger.info('Event %s have now the additional weight' % self.lhe_input.name)
+         elif self.output_type == "unweight":
+             for key in output:
+-                output[key].write('</LesHouchesEvents>\n')
+-                output.close()
++                #output[key].write('</LesHouchesEvents>\n')
++                #output.close()
+                 lhe = lhe_parser.EventFile(output[key].name)
+                 nb_event = lhe.unweight(target)
+                 if self.mother and  hasattr(self.mother, 'results'):
+                     results = self.mother.results
+                     results.add_detail('nb_event', nb_event)
+                     results.current.parton.append('lhe')
+-                logger.info('Event %s is now unweighted under the new theory' % lhe.name)                
++                logger.info('Event %s is now unweighted under the new theory: %s(%s)' % (lhe.name, target, nb_event)) 
+         else:
+             if self.mother and  hasattr(self.mother, 'results'):
+                 results = self.mother.results
+@@ -1781,7 +1781,10 @@
+                 if 'virt' in onedir:
+                     tag = (tag, 'V')
+                 prefix = all_prefix[i]
+-                hel = hel_dict[prefix]
++                if prefix in hel_dict:
++                    hel = hel_dict[prefix]
++                else:
++                    hel = {}
+                 if tag in data:
+                     oldpdg = data[tag][0][0]+data[tag][0][1]
+                     if all_prefix[all_pdgs.index(pdg)] == all_prefix[all_pdgs.index(oldpdg)]:

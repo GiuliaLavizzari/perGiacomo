@@ -1,0 +1,34 @@
+change helicity False
+change rwgt_dir rwgt
+
+# SM rwgt_1
+launch
+   set SMEFTcpv 2 0
+   set SMEFTcpv 4 0
+   set SMEFTcpv 6 0
+
+
+
+# cWtil=1 rwgt_2
+launch
+   set SMEFTcpv 2 0.01
+   set SMEFTcpv 4 0
+   set SMEFTcpv 6 0
+
+
+
+# cHWtil=1 rwgt_3
+launch
+   set SMEFTcpv 2 0
+   set SMEFTcpv 4 10
+   set SMEFTcpv 6 0
+
+
+
+# cHWBtil=1 rwgt_4
+launch
+   set SMEFTcpv 2 0
+   set SMEFTcpv 4 0
+   set SMEFTcpv 6 20
+
+
