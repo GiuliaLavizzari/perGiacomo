@@ -8,66 +8,27 @@ launch
    set SMEFTcpv 6 0
 
 
-# cWtil=-1 rwgt_2
-launch
-   set SMEFTcpv 2 -0.01
-   set SMEFTcpv 4 0
-   set SMEFTcpv 6 0
 
-
-# cWtil=1 rwgt_3
+# cWtil=1 rwgt_2
 launch
    set SMEFTcpv 2 0.01
    set SMEFTcpv 4 0
    set SMEFTcpv 6 0
 
 
-# cHWtil=-1 rwgt_4
-launch
-   set SMEFTcpv 2 0
-   set SMEFTcpv 4 -10
-   set SMEFTcpv 6 0
 
-
-# cHWtil=1 rwgt_5
+# cHWtil=1 rwgt_3
 launch
    set SMEFTcpv 2 0
    set SMEFTcpv 4 10
    set SMEFTcpv 6 0
 
 
-# cHWBtil=-1 rwgt_6
-launch
-   set SMEFTcpv 2 0
-   set SMEFTcpv 4 0
-   set SMEFTcpv 6 -20
 
-
-# cHWBtil=1 rwgt_7
+# cHWBtil=1 rwgt_4
 launch
    set SMEFTcpv 2 0
    set SMEFTcpv 4 0
    set SMEFTcpv 6 20
-
-
-# cWtil=1, cHWtil=1 rwgt_8
-launch
-   set SMEFTcpv 2 1
-   set SMEFTcpv 4 1
-   set SMEFTcpv 6 0
-
-
-# cWtil=1, cHWBtil=1 rwgt_9
-launch
-   set SMEFTcpv 2 1
-   set SMEFTcpv 4 0
-   set SMEFTcpv 6 1
-
-
-# cHWtil=1, cHWBtil=1 rwgt_10
-launch
-   set SMEFTcpv 2 0
-   set SMEFTcpv 4 1
-   set SMEFTcpv 6 1
 
 
