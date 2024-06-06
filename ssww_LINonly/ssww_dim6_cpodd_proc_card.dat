@@ -36,5 +36,5 @@ define l+ = e+ mu+
 define l- = e- mu- 
 define vl = ve vm
 define vl~ = ve~ vm~
-generate p p > l+ l+ vl vl j j SMHLOOP=0 QCD=0 NP=1
+generate p p > l+ l+ vl vl j j SMHLOOP=0 QCD=0 NP=1 NP^2==1
 output ssww_dim6_cpodd
