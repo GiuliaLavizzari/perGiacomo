@@ -1,5 +1,5 @@
-Starting job on  Wed Jun 5 17:06:07 CEST 2024
-Running on  Linux wp-12-12.lnl.infn.it 3.10.0-1160.102.1.el7.x86_64 #1 SMP Tue Oct 17 15:42:21 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+Starting job on  Wed Jun 5 19:07:28 CEST 2024
+Running on  Linux ccwcondor0463 3.10.0-1160.108.1.el7.x86_64 #1 SMP Thu Jan 25 16:17:31 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 System release  CentOS Linux release 7.9.2009 (Core)
 name: ssww_dim6_cpodd
 carddir: cards/ssww_LINonly/
