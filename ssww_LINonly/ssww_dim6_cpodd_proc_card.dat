@@ -29,7 +29,7 @@ set loop_color_flows False
 set gauge unitary
 set complex_mass_scheme False
 set max_npoint_for_channel 0
-import model SMEFTsim_topU3l_MwScheme_UFO-cWtil_cHWtil_cHWBtil_massless
+import model SMEFTsim_topU3l_MwScheme_UFO_b_massless-cWtil_cHWtil_cHWBtil_massless
 define p = g u c d s b u~ c~ d~ s~ b~
 define j = p
 define l+ = e+ mu+ 
